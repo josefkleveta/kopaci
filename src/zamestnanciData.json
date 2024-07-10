@@ -1,0 +1,14 @@
+{
+  "zamestnanci": [
+    {
+      "id": 1,
+      "name": "Marie",
+      "surname": "Nová",
+      "sex": "žena"
+    },
+    { "id": 2, "name": "Helena", "surname": "Novák", "sex": "žena" },
+    { "id": 3, "name": "Martin", "surname": "Nesvozil", "sex": "muž" },
+    { "id": 4, "name": "Helga", "surname": "Hildebrand", "sex": "žena" },
+    { "id": 5, "name": "Tomáš", "surname": "Otočil", "sex": "muž" }
+  ]
+}
