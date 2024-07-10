@@ -8,6 +8,11 @@ function WorkForm({ onAdd, buttonStyle, validation }) {
   });
 
   //const [disable, setDisable] = useState(true);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  useEffect(() => {
+    const isDisabled = tempStorage.metru === "" || tempStorage.hodin === "";
+    setIsButtonDisabled(isDisabled);
+  }, [tempStorage]);
 
   const handleStorage = (event) => {
     const source = event.target.name;
@@ -71,7 +76,11 @@ function WorkForm({ onAdd, buttonStyle, validation }) {
       />
 
       {/* <button disabled={disable} onClick={handleClick}> */}
-      <button style={buttonStyle} onClick={handleClick}>
+      <button
+        style={buttonStyle}
+        disabled={isButtonDisabled}
+        onClick={handleClick}
+      >
         Zjistit splnitelnost
       </button>
     </div>

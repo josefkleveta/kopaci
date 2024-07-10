@@ -16,7 +16,7 @@ function App() {
         : 1,
     name: "",
     surname: "",
-    sex: "",
+    sex: "muž",
   });
   const [activeTab, setActiveTab] = useState(1);
   const handleChoose = (source) => {
@@ -43,17 +43,21 @@ function App() {
   };
   const [valid, setValid] = useState(false);
   const handleAdd = () => {
-    setListOfEmps((listOfEmps) => {
-      return [...listOfEmps, newEmp];
-    });
-    const newEmpId = newEmp.id + 1;
-    const updatedEmp = {
-      id: newEmpId,
-      name: "",
-      surname: "",
-      sex: "",
-    };
-    setNewEmp(updatedEmp);
+    if (newEmp.name === "" || newEmp.surname === "") {
+      alert("Špatně zadaný zaměstnanec");
+    } else {
+      setListOfEmps((listOfEmps) => {
+        return [...listOfEmps, newEmp];
+      });
+      const newEmpId = newEmp.id + 1;
+      const updatedEmp = {
+        id: newEmpId,
+        name: "",
+        surname: "",
+        sex: "",
+      };
+      setNewEmp(updatedEmp);
+    }
   };
   const empsRequirements = {
     zena: 0.5,
